@@ -21,8 +21,10 @@ class Grid {
         Z
     }
 
-    private val WIDTH = 10
-    private val HEIGHT = 17
+    companion object {
+        private const val WIDTH = 10
+        private const val HEIGHT = 17
+    }
 
     private val cells = Array<BlockType>(WIDTH * HEIGHT) { BlockType.EMPTY }
 
