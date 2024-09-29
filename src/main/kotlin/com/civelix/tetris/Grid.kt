@@ -10,6 +10,7 @@ class Grid {
 
     enum class BlockType {
         EMPTY,
+        BORDER,
         // The next values correspond to the tetromino type that filling that cell.
         I,
         O,
