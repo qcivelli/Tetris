@@ -43,8 +43,18 @@ data class Tetromino(val width : Int, val squares : BooleanArray) {
     val height : Int get() = squares.size / width
 
     fun rotateRight() : Tetromino {
-        // TODO
-        return this
+        var newSquares = BooleanArray(squares.size)
+        var newWidth = height
+        var newHeight = width
+        for(i in 0 until newHeight) {
+            for(j in 0 until newWidth ) {
+                newSquares[getIndex(j,i,newWidth)] = squares[getIndex(i,height-j-1,width)]
+            }
+        }
+        return Tetromino(height, newSquares)
+    }
+    fun getIndex(x : Int, y : Int, width : Int) : Int {
+        return  x + y * width
     }
 
     fun rotateLeft() : Tetromino {
